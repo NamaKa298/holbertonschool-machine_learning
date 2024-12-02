@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-import numpy as np
-
 
 def matrix_shape(matrix):
-    matrice = list(np.array(matrix).shape)
-    return(matrice)
+    for i in range (len(matrix)):
+        if type(matrix[i]) is list:
+            return [len(matrix)] + matrix_shape(matrix[i])
+        else:
+            return [len(matrix)]
