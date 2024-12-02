@@ -13,7 +13,10 @@ def poly_derivative(poly):
         list: A list of coefficients representing the derivative of the polynomial.
     """
     deriv = []
-    for i in range(1, len(poly)):
-        poly[i] *= i
-        deriv.append(poly[i])
-    return deriv
+    if poly==[]:
+        return [0]
+    else:
+        for i in range(1, len(poly)):
+            poly[i] *= i
+            deriv.append(poly[i])
+        return deriv
