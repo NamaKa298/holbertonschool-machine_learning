@@ -10,7 +10,7 @@ def poly_integral(poly, C=0):
             not isinstance(C, int)):
         return None
     if len(poly) == 1:
-        return [C]
+        return [C, poly[0]]
 
     integral = [C]
     for i in range(len(poly)):
