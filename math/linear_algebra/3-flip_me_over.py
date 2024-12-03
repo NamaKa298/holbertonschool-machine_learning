@@ -10,4 +10,10 @@ def matrix_transpose(matrix):
     Returns:
         list: A list of lists representing the transpose of the matrix.
     """
-    return [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
+    transpose_final = []
+    for i in range(len(matrix[0])):
+        transpose=[]
+        for j in range(len(matrix)):
+            transpose.append(matrix[j][i])
+        transpose_final += [transpose]
+    return transpose_final
