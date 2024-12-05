@@ -19,7 +19,6 @@ def two():
     plt.title("Exponential Decay of Radioactive Elements")
     plt.xlim(0, 20000)
     plt.ylim(0, 1)
-    plt.legend()
     plt.plot(x, y1, linestyle='--', c='r', label='C-14')
     plt.plot(x, y2, c='g', label='Ra-226')
     plt.legend(loc='upper right')
