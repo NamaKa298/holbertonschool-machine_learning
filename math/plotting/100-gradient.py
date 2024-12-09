@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
+"""7. Gradient"""
 import numpy as np
 import matplotlib.pyplot as plt
 
-def gradient():
 
+def gradient():
+    """Trace un nuage de points avec gradient en fonction de la hauteur"""
     np.random.seed(5)
 
     x = np.random.randn(2000) * 10
@@ -14,4 +16,6 @@ def gradient():
     plt.xlabel('x coordinate (m)')
     plt.ylabel('y coordinate (m)')
     plt.title('Mountain Elevation')
+    plt.scatter(x, y, c=z, cmap='viridis')
+    plt.colorbar().set_label('elevation (m)')
     plt.savefig('gradient.png')
