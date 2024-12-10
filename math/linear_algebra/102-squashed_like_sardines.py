@@ -10,8 +10,6 @@ def cat_matrices(mat1, mat2, axis=0):
 
     # Si axis == 0, concatène directement les listes principales
     if axis == 0:
-        if isinstance(mat1[0], list) != isinstance(mat2[0], list):
-            return None
         return mat1 + mat2
 
     # Si axis > 0, gérer la concaténation récursive
@@ -20,9 +18,8 @@ def cat_matrices(mat1, mat2, axis=0):
 
     new_mat = []
     for sub1, sub2 in zip(mat1, mat2):
-        concatenated = cat_matrices(sub1, sub2, axis - 1)
+        concatenated = cat_matrices(sub1, sub2, axis=axis-1)
         if concatenated is None:
             return None
         new_mat.append(concatenated)
-
     return new_mat
