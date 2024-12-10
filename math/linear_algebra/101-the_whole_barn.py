@@ -4,7 +4,7 @@
 
 def add_matrices(mat1, mat2):
     """Fonction qui additionne 2 matrices"""
-    if type(mat1) != type(mat2):
+    if not isinstance(mat1, type(mat2)):
         return None
     if isinstance(mat1, (int, float)):
         return mat1 + mat2
