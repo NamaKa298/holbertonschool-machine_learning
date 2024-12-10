@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
 """16. The Whole Barn"""
-import numpy as np
 
 
 def add_matrices(mat1, mat2):
-    """fonction qui additionne 2 matrices"""
-    mat1 = np.array(mat1)
-    mat2 = np.array(mat2)
-    if mat1.shape != mat2.shape:
+    """Fonction qui additionne 2 matrices"""
+    if type(mat1) != type(mat2):
         return None
-    else:
-        new_matrice = mat1 + mat2
-        return new_matrice.tolist()
+    if isinstance(mat1, (int, float)):
+        return mat1 + mat2
+    if len(mat1) != len(mat2):
+        return None
+    result = []
+    for m1, m2 in zip(mat1, mat2):
+        added = add_matrices(m1, m2)
+        if added is None:
+            return None
+        result.append(added)
+    return result
